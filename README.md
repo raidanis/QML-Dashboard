@@ -1,3 +1,4 @@
+---
 title: QML Dashboard Test
 emoji: 📚
 colorFrom: purple
@@ -7,6 +8,7 @@ sdk_version: 6.32.0
 python_version: '3.12'
 app_file: app.py
 pinned: false
+---
 
 # QML Intrusion Detection & Zero-Day Lab
 
