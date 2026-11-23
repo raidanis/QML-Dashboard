@@ -1,3 +1,13 @@
+title: QML Dashboard Test
+emoji: 📚
+colorFrom: purple
+colorTo: indigo
+sdk: gradio
+sdk_version: 6.32.0
+python_version: '3.12'
+app_file: app.py
+pinned: false
+
 # QML Intrusion Detection & Zero-Day Lab
 
 Interactive Streamlit dashboard to compare **quantum ML** (PennyLane) and classical detectors, including a **zero-day mode**
