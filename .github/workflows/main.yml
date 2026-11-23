@@ -8,11 +8,20 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to hub
+
+      - name: Push to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://raidon404:$HF_TOKEN@huggingface.co/spaces/raidon404/QML-dashboard-test main
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::error::HF_TOKEN is missing or empty"
+            exit 1
+          fi
+
+          git remote add huggingface \
+            "https://raidon404:${HF_TOKEN}@huggingface.co/spaces/raidon404/QML-dashboard-test"
+          git push --force huggingface main
